@@ -1,0 +1,58 @@
+/* Cross-platform fixes */
+
+/* Fix for 100vh issue on iOS */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+
+  /* Fix for momentum scrolling */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Fix for tap highlight color */
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Fix for input zoom on iOS */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* Fix for iOS image rendering */
+  img {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* Fix for Android Chrome overscroll glow */
+html {
+  overscroll-behavior: none;
+}
+
+/* Fix for Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+/* Fix for Chrome/Safari scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
